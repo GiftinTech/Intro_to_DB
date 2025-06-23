@@ -33,9 +33,7 @@ CREATE TABLE IF NOT EXISTS Orders(
   order_id INT PRIMARY KEY AUTO_INCREMENT,
   customer_id INT NOT NULL,
   order_date DATE,
-
-  CONSTRAINT FK_CustomerId FOREIGN KEY (customer_id)
-  REFERENCES Customers(customer_id)
+  CONSTRAINT FK_CustomerId FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
 -- Create the Order_Details table
@@ -44,12 +42,8 @@ CREATE TABLE IF NOT EXISTS Order_Details(
   order_id INT NOT NULL,
   book_id INT NOT NULL,
   quantity DOUBLE NOT NULL,
-
-  CONSTRAINT FK_OrderDetails_Orders FOREIGN KEY (order_id)
-  REFERENCES Orders(order_id),
-
-  CONSTRAINT FK_OrderDetails_Books FOREIGN KEY (book_id)
-  REFERENCES Books(book_id)
+  CONSTRAINT FK_OrderDetails_Orders FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+  CONSTRAINT FK_OrderDetails_Books FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
 
 -- SHOW TABLES;
