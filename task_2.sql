@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS order_details(
   order_id INT NOT NULL,
   book_id INT NOT NULL,
   quantity DOUBLE NOT NULL,
-  CONSTRAINT FK_OrderDetails_Orders FOREIGN KEY (order_id) REFERENCES Orders(order_id),
-  CONSTRAINT FK_OrderDetails_Books FOREIGN KEY (book_id) REFERENCES Books(book_id)
+  CONSTRAINT FK_OrderDetails_Orders FOREIGN KEY (order_id) REFERENCES orders(order_id),
+  CONSTRAINT FK_OrderDetails_Books FOREIGN KEY (book_id) REFERENCES books(book_id)
 );
 
 SHOW TABLES;
